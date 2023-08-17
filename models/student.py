@@ -10,4 +10,6 @@ class Student(models.Model):
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')])
     contact_no = fields.Char()
     address = fields.Text()
-    # achievement_ids = fields.One2many('achievement', 'student_id', string='Achievements')
+    achievement_ids = fields.One2many('achievement', 'student_id', string='Achievements')
+    student_id = fields.Many2one('student', string='Student')
+    course_id = fields.Many2one('course', string='Course')

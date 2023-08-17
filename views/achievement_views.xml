@@ -1,0 +1,70 @@
+<odoo>
+    <!-- Action to open Achievement records -->
+    <record id="action_achievement" model="ir.actions.act_window">
+        <field name="name">Achievements</field>
+        <field name="res_model">achievement</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Form View for Achievement
+    <record id="view_achievement_form" model="ir.ui.view">
+        <field name="name">achievement.form</field>
+        <field name="model">achievement</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="student_id"/>
+                        <field name="achievement_name"/>
+                        <field name="date_received"/>
+                        <field name="awarded_by"/>
+                    </group>
+                    <group>
+                        <field name="achievement_type"/>
+                        <field name="description"/>
+                        <field name="is_verified"/>
+                        <field name="verification_date"/>
+                    </group>
+                    <group>
+                        <field name="certificate_image"/>
+                    </group>
+                    <group>
+                        <field name="achievement_criteria"/>
+                        <field name="milestone_achieved"/>
+                        <field name="related_projects"/>
+                    </group>
+                    <group>
+                        <field name="achievement_status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record> -->
+
+    <!-- Tree View for Achievement -->
+    <record id="view_achievement_tree" model="ir.ui.view">
+        <field name="name">achievement.tree</field>
+        <field name="model">achievement</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_id"/>
+                <field name="achievement_name"/>
+                <field name="date_received"/>
+                <field name="achievement_status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search view for Achievement records -->
+    <record id="achievement_view_search" model="ir.ui.view">
+        <field name="name">achievement.view.search</field>
+        <field name="model">achievement</field>
+        <field name="arch" type="xml">
+            <search string="Search Achievements">
+                <field name="student_id"/>
+                <field name="achievement_name"/>
+                <field name="achievement_status"/>
+            </search>
+        </field>
+    </record>
+</odoo>

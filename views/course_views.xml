@@ -43,4 +43,26 @@
             </tree>
         </field>
     </record>
+    <!-- Search view for Course records -->
+<record id="course_view_search" model="ir.ui.view">
+    <field name="name">course.view.search</field>
+    <field name="model">course</field>
+    <field name="arch" type="xml">
+        <search string="Search Courses">
+            <field name="name"/>
+            <field name="category_id"/>
+            <field name="instructor_id"/>
+            <field name="description"/>
+            <field name="syllabus"/>
+            <field name="max_students"/>
+            <field name="start_date"/>
+            <field name="end_date"/>
+            <field name="status"/>
+            <filter string="Active Courses" name="active" domain="[('status', '=', 'active')]"/>
+            <filter string="Completed Courses" name="completed" domain="[('status', '=', 'completed')]"/>
+            <filter string="Draft Courses" name="draft" domain="[('status', '=', 'draft')]"/>
+        </search>
+    </field>
+</record>
+
 </odoo>

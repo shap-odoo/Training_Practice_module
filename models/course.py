@@ -19,5 +19,6 @@ class Course(models.Model):
         string='Course Status',
         default='draft',
         copy=False)
-# enrollment_ids = fields.One2many('learning_hub.enrollment', 'course_id', string='Enrollments')
-# instructor_id = fields.Many2one('res.partner', string='Instructor', required=True)
+    enrollment_ids = fields.One2many('enrollment', 'course_id', string='Enrollments')
+    instructor_id = fields.Many2one('instructor', string='Instructor', required=True)
+    category_id = fields.Many2one('course.category', string='Category', required=True)
