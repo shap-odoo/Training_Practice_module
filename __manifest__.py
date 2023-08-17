@@ -1,8 +1,14 @@
 {
    'application': True,
    'author': 'Odoo mates',
-   'name':'education_management',
-   'website':'www.odoo.com/education_management',
+   'name':'Learning Hub',
    'summary':'welcome to odoo',
+   'data':['security/ir.model.access.csv',
+           'views/course_category_views.xml',
+            'views/course_views.xml',
+            'views/menus.xml',
+        
+            ]
+   
  
 }
