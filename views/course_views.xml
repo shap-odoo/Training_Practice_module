@@ -7,28 +7,43 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Form View -->
-    <record id="view_course_form" model="ir.ui.view">
-        <field name="name">course.form</field>
-        <field name="model">course</field>
-        <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="category_id"/>
-                        <field name="instructor_id"/>
-                        <field name="description"/>
-                        <field name="syllabus"/>
-                        <field name="max_students"/>
-                        <field name="start_date"/>
-                        <field name="end_date"/>
-                        <field name="status"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
+   <record id="view_course_form" model="ir.ui.view">
+    <field name="name">course.form</field>
+    <field name="model">course</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="category_id"/>
+                    <field name="status"/>
+                </group>
+                <notebook>
+                    <page string="Course Details">
+                        <group>
+                            <field name="instructor_id"/>
+                            <field name="description"/>
+                            <field name="syllabus"/>
+                            <field name="max_students"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                    </page>
+                    <page string="Enrollment Information">
+                        <field name="enrollment_ids" widget="one2many_list"/>
+                    </page>
+                    <page string="Instructors">
+                        <group>
+                            <field name="instructor_id"/>
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+    
 
     <!-- Tree View -->
     <record id="view_course_tree" model="ir.ui.view">

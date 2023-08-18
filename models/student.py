@@ -11,5 +11,6 @@ class Student(models.Model):
     contact_no = fields.Char()
     address = fields.Text()
     achievement_ids = fields.One2many('achievement', 'student_id', string='Achievements')
-    student_id = fields.Many2one('student', string='Student')
+    student_id = fields.Many2one('achievement', string='Student')
+    enrollment_ids = fields.One2many('enrollment', 'student_id', string='Enrollments')
     course_id = fields.Many2one('course', string='Course')

@@ -12,5 +12,10 @@
               <menuitem id="student_menu_action" name="Student" action="action_student" />
                <menuitem id="enrollment_menu_action" name="Enrollment" action="action_enrollment" /> 
         </menuitem>
+           
+              <menuitem id="instructor_second_level_menu" name="Instructors">
+            <menuitem id="instructor_menu_action" name="Instructors" action="action_instructor" />
+        </menuitem>
+     
     </menuitem>
 </odoo>

@@ -6,7 +6,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Form View for Achievement
+    <!-- Form View for Achievement -->
     <record id="view_achievement_form" model="ir.ui.view">
         <field name="name">achievement.form</field>
         <field name="model">achievement</field>
@@ -31,7 +31,6 @@
                     <group>
                         <field name="achievement_criteria"/>
                         <field name="milestone_achieved"/>
-                        <field name="related_projects"/>
                     </group>
                     <group>
                         <field name="achievement_status"/>
@@ -39,7 +38,7 @@
                 </sheet>
             </form>
         </field>
-    </record> -->
+    </record> 
 
     <!-- Tree View for Achievement -->
     <record id="view_achievement_tree" model="ir.ui.view">

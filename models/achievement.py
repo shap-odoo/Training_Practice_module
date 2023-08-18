@@ -5,7 +5,6 @@ class Achievement(models.Model):
     _description = 'Student Achievements'
 
     achievement_id = fields.Char(string='Achievement ID',required=True)
-    student_id = fields.Many2one('student', string='Student')
     achievement_name = fields.Char(string='Achievement Name')
     date_received = fields.Date(string='Date Received')
     awarded_by = fields.Char()
@@ -24,7 +23,8 @@ class Achievement(models.Model):
 
     achievement_criteria = fields.Text(string='Achievement Criteria')
     milestone_achieved = fields.Boolean(string='Milestone Achieved')
-    related_projects = fields.Many2many('project', string='Related Projects/Assignments')
+    student_id = fields.Many2one('student', string='Student')
+    # related_projects = fields.Many2many('project', string='Related Projects/Assignments')
     achievement_status = fields.Selection([
         ('pending', 'Pending'),
         ('earned', 'Earned'),
