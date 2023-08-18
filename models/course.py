@@ -53,5 +53,10 @@ class Course(models.Model):
     def _compute_remaining_seats(self):
         for course in self:
             course.remaining_seats = course.max_students - len(course.enrollment_ids)
-
+    
+    @api.constrains('start_date', 'end_date')
+    def _check_dates(self):
+        for course in self:
+            if course.start_date and course.end_date and course.start_date > course.end_date:
+                raise exceptions.ValidationError('Start date must be before end date.')
     

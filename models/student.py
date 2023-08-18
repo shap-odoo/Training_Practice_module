@@ -1,4 +1,4 @@
-from odoo import models, fields,api
+from odoo import models, fields,api,exceptions
 import re
 
 class Student(models.Model):
@@ -7,7 +7,7 @@ class Student(models.Model):
 
     name = fields.Char(string="name",required=True)
     date_of_birth = fields.Date()
-    email = fields.Char()
+    email = fields.Char(string='Email', help='Enter a valid email address')
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')])
     contact_no = fields.Char(string="Contact Number ", required=True)
     address = fields.Text()
@@ -34,3 +34,9 @@ class Student(models.Model):
 
     total_enrollments = fields.Integer(
         string='Total Enrollments', compute='_compute_total_enrollments')
+
+    @api.constrains('email')
+    def _check_email(self):
+        for student in self:
+            if student.email and not re.match(r'^[\w\.-]+@[\w\.-]+$', student.email):
+                raise exceptions.ValidationError('Invalid email format.')
