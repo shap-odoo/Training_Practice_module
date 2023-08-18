@@ -17,6 +17,8 @@
                         <field name="email_id"/>
                         <field name="contact_no"/>
                         <field name="specialization"/>
+                        <field name="total_courses_taught"/>
+
                     </group>
                     <notebook>
                         <page string="Courses">

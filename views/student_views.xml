@@ -28,6 +28,7 @@
                                 <field name="student_id"/>
                                 <field name="course_id"/>
                                  <field name="enrollment_ids" widget="one2many_list"/>
+                                 <field name="total_enrollments"/>
                             </group>
                         </page>
                         <page string="Achievements">

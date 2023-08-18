@@ -27,6 +27,9 @@
                             <field name="max_students"/>
                             <field name="start_date"/>
                             <field name="end_date"/>
+                            <field name="course_duration"/>
+                            <field name="remaining_seats"/>
+                            <field name="total_enrolled_students"/>
                         </group>
                     </page>
                     <page string="Enrollment Information">

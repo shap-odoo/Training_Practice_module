@@ -26,12 +26,17 @@ class Course(models.Model):
         
     course_duration = fields.Integer(
         string='Course Duration (Days)', compute='_compute_course_duration')
+    remaining_seats = fields.Integer(
+        string='Remaining Seats', compute='_compute_remaining_seats')
 
+    _sql_constraints = [
+        ('unique_name', 'UNIQUE(name)', 'Course name must be unique.'),
+    ]        
+  
     @api.depends('enrollment_ids')
     def _compute_total_enrolled_students(self):
         for course in self:
-            course.total_enrolled_students = len(course.enrollment_ids)
-
+                course.total_enrolled_students = len(course.enrollment_ids)
     @api.depends('start_date', 'end_date')
     def _compute_course_duration(self):
         for course in self:
@@ -39,4 +44,14 @@ class Course(models.Model):
                 delta = course.end_date - course.start_date
                 course.course_duration = delta.days + 1
             else:
-                course.course_duration = 0        
+                course.course_duration = 0
+
+    def action_mark_completed(self):
+        self.state = 'completed'
+
+    @api.depends('max_students', 'enrollment_ids')
+    def _compute_remaining_seats(self):
+        for course in self:
+            course.remaining_seats = course.max_students - len(course.enrollment_ids)
+
+    
