@@ -29,6 +29,21 @@
             </form>
         </field>
     </record>
+<record id="view_instructor_tree" model="ir.ui.view">
+    <field name="name">instructor.tree</field>
+    <field name="model">instructor</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="email_id"/>
+            <field name="contact_no"/>
+            <field name="specialization"/>
+            <field name="total_courses_taught"/>
+        </tree>
+    </field>
+</record>
+
+  
 </odoo>
 
 

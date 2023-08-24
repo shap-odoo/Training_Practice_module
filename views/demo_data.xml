@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       <!-- Demo data for Course Categories -->
+    <record id="demo_data_1" model="course.category">
+        <field name="name">Programming</field>
+        <field name="description">Courses related to programming .</field>
+    </record>
+      
+            <!-- Demo data for Students -->
+    <record id="demo_data_2" model="student">
+        <field name="name">Alice Smith</field>
+        <field name="date_of_birth">2000-01-15</field>
+        <field name="email">alice@example.com</field>
+        <field name="gender">female</field>
+        <field name="contact_no">9876543210</field>
+        <field name="address">123 Main St, City</field>
+        </record>
+          
+
+</odoo>

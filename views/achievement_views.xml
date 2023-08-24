@@ -14,7 +14,7 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="student_id"/>
+                        <!-- <field name="student_id"/> -->
                         <field name="achievement_name"/>
                         <field name="date_received"/>
                         <field name="awarded_by"/>
@@ -46,7 +46,7 @@
         <field name="model">achievement</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="student_id"/>
+                <!-- <field name="student_id"/> -->
                 <field name="achievement_name"/>
                 <field name="date_received"/>
                 <field name="achievement_status"/>
@@ -60,10 +60,18 @@
         <field name="model">achievement</field>
         <field name="arch" type="xml">
             <search string="Search Achievements">
-                <field name="student_id"/>
+                <!-- <field name="student_id"/> -->
                 <field name="achievement_name"/>
                 <field name="achievement_status"/>
             </search>
         </field>
     </record>
 </odoo>
+        
+        
+        
+        <!-- <field name="instructor_id">saba</field>
+        <field name="description">This course will be interesting</field>
+        <field name="max_student">1000</field>
+        <field name="start_date">901</field>
+        <field name="end_date">6</field> -->

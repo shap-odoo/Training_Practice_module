@@ -21,5 +21,16 @@
         </field>
     </record>
 
-   
+   <record id="view_enrollment_tree" model="ir.ui.view">
+    <field name="name">enrollment.tree</field>
+    <field name="model">enrollment</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="student_id"/>
+            <field name="course_id"/>
+            <field name="enrollment_date"/>
+        </tree>
+    </field>
+</record>
+
 </odoo>

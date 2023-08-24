@@ -10,6 +10,7 @@
             'views/student_views.xml',
              'views/achievement_views.xml',
              'views/instructor_views.xml',
+             'views/demo_data.xml',
             'views/menus.xml',
         
             ]

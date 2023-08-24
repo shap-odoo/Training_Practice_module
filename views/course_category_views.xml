@@ -20,7 +20,7 @@
                     </group>
                     <notebook>
                     <page string="Courses">
-                        <field name="course_ids" widget="many2many_tags"/>
+                        <!-- <field name="course_ids" widget="many2many_tags"/> -->
                     </page>
                 </notebook>
                 </sheet>

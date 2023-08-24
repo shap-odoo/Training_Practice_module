@@ -23,7 +23,7 @@ class Achievement(models.Model):
 
     achievement_criteria = fields.Text(string='Achievement Criteria')
     milestone_achieved = fields.Boolean(string='Milestone Achieved')
-    student_id = fields.Many2one('student', string='Student')
+    # student_id = fields.Many2one('student', string='Student')
     # related_projects = fields.Many2many('project', string='Related Projects/Assignments')
     achievement_status = fields.Selection([
         ('pending', 'Pending'),
