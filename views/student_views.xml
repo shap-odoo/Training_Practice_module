@@ -12,6 +12,10 @@
         <field name="model">student</field>
         <field name="arch" type="xml">
             <form>
+              <header>
+                    <field name="achievement_status" widget="statusbar"  statusbar_visible="pending, verified,earned"/>                    
+                    </header>
+
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -22,15 +26,6 @@
                         <field name="address"/>
                     </group>
                     <notebook>
-                        <page string="Enrollment Information">
-                            <!-- Fields related to enrollment -->
-                            <group>
-                                <!-- <field name="student_id"/> -->
-                                <field name="course_id"/>
-                                 <field name="enrollment_ids" widget="one2many_list"/>
-                                 <field name="total_enrollments"/>
-                            </group>
-                        </page>
                         <page string="Achievements">
                             <group>
                              <field name="achievement_ids" widget="one2many_list"/>

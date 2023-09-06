@@ -5,16 +5,34 @@
         <field name="name">Programming</field>
         <field name="description">Courses related to programming .</field>
     </record>
+
+       <record id="demo_instructor_1" model="instructor">
+        <field name="name">saba </field>
+        <field name="email_id">saba@example.com</field>
+        <field name="contact_no">1234567890</field>
+        <field name="specialization">Python Programming</field>
+    </record>
+           
+           
+    <record id="demo_data_3" model="course">
+        <field name="name">python</field>
+        <field name="course_category_id" ref="demo_data_1"/>
+        <field name="instructor_id"  ref="demo_instructor_1"></field>
+        <field name="max_students">20</field>
+        <field name="remaining_seats">20</field>
+        <field name="status">active</field>
+    </record>
+
+       
       
-            <!-- Demo data for Students -->
-    <record id="demo_data_2" model="student">
-        <field name="name">Alice Smith</field>
+            <!--Demo data for Students-->
+      <record id="demo_data_4" model="student">
+        <field name="name">shama</field>
         <field name="date_of_birth">2000-01-15</field>
-        <field name="email">alice@example.com</field>
+        <field name="email">shama@example.com</field>
         <field name="gender">female</field>
         <field name="contact_no">9876543210</field>
         <field name="address">123 Main St, City</field>
         </record>
-          
 
 </odoo>

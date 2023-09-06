@@ -4,7 +4,7 @@ class Achievement(models.Model):
     _name = 'achievement'
     _description = 'Student Achievements'
 
-    achievement_id = fields.Char(string='Achievement ID',required=True)
+    achievement_id = fields.Char(string='Achievement ID')
     achievement_name = fields.Char(string='Achievement Name')
     date_received = fields.Date(string='Date Received')
     awarded_by = fields.Char()
@@ -18,7 +18,7 @@ class Achievement(models.Model):
     description = fields.Text(string='Description')
     is_verified = fields.Boolean(string='Verified')
     verification_date = fields.Date(string='Verification Date')
-    certificate_image = fields.Binary(string='Certificate Image', attachment=True)
+    certificate_image = fields.Binary(string='Certificate Image')
     
 
     achievement_criteria = fields.Text(string='Achievement Criteria')
@@ -27,8 +27,8 @@ class Achievement(models.Model):
     # related_projects = fields.Many2many('project', string='Related Projects/Assignments')
     achievement_status = fields.Selection([
         ('pending', 'Pending'),
-        ('earned', 'Earned'),
-        ('verified', 'Verified')
+        ('verified', 'Verified'),
+         ('earned', 'Earned'),
     ], string='Achievement Status')
 
 

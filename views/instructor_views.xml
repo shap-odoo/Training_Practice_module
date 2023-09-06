@@ -13,16 +13,17 @@
             <form>
                 <sheet>
                     <group>
+                      <tree editable="bottom">
                         <field name="name"/>
                         <field name="email_id"/>
                         <field name="contact_no"/>
                         <field name="specialization"/>
                         <field name="total_courses_taught"/>
-
+                      </tree>
                     </group>
                     <notebook>
                         <page string="Courses">
-                            <field name="course_ids" widget="many2many_tags"/>
+                            <field name="course_ids" widget="many2many_tags" />
                         </page>
                     </notebook>
                 </sheet>
@@ -33,7 +34,7 @@
     <field name="name">instructor.tree</field>
     <field name="model">instructor</field>
     <field name="arch" type="xml">
-        <tree>
+        <tree editable="bottom">
             <field name="name"/>
             <field name="email_id"/>
             <field name="contact_no"/>

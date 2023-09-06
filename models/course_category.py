@@ -6,7 +6,10 @@ class CourseCategory(models.Model):
 
     name = fields.Char(string='Category Name')
     description = fields.Text(string='Description')
+    # course_category_id = fields.Many2one('course', string='Category')
+    color = fields.Integer(string=' Tag color')
+
     # category_id = fields.Many2one('course', string='Category')
 
-    # course_ids = fields.One2many('course', 'category_id', string='Courses')
+    # course_ids = fields.One2many('course', string='Courses')
 

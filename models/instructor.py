@@ -10,6 +10,12 @@ class Instructor(models.Model):
     contact_no = fields.Char(string='Contact No.')
     specialization = fields.Char(string="Specialization",required=True)
     course_ids = fields.One2many('course', 'instructor_id', string='Courses')
+    
+    _sql_constraints = [
+        ('unique_email', 'UNIQUE(email_id)', 'Email must be unique.'),
+    ]
+
+
 
     @api.depends('course_ids')
     def _compute_total_courses_taught(self):

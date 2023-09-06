@@ -1,12 +1,14 @@
 from odoo import models, fields,api,exceptions
+from odoo.exceptions import ValidationError
 import re
+
 
 class Student(models.Model):
     _name = 'student'
     _description = 'Student Information'
 
     name = fields.Char(string="name",required=True)
-    date_of_birth = fields.Date()
+    date_of_birth = fields.Date(string='Date_Of_Birth')
     email = fields.Char(string='Email', help='Enter a valid email address')
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')])
     contact_no = fields.Char(string="Contact Number ", required=True)
@@ -15,6 +17,12 @@ class Student(models.Model):
     # achievement_id = fields.Many2one('achievement', string='Student')
     enrollment_ids = fields.One2many('enrollment', 'student_id', string='Enrollments')
     course_id = fields.Many2one('course', string='Course')
+    achievement_status = fields.Selection([
+        ('pending', 'Pending'),
+        ('verified', 'Verified'),
+         ('earned', 'Earned'),
+    ], string='Achievement Status')
+
 
     _sql_constraints = [
         ('unique_email', 'UNIQUE(email)', 'Email must be unique.'),
@@ -40,3 +48,10 @@ class Student(models.Model):
         for student in self:
             if student.email and not re.match(r'^[\w\.-]+@[\w\.-]+$', student.email):
                 raise exceptions.ValidationError('Invalid email format.')
+
+
+    @api.constrains('date_of_birth')
+    def _check_birth_date(self):
+        for student in self:
+            if student.date_of_birth  and student.date_of_birth  > fields.Date.today():
+                raise ValidationError("Birth date cannot be in the future.")            

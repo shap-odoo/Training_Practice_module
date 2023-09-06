@@ -3,6 +3,7 @@
    'author': 'Odoo mates',
    'name':'Learning Hub',
    'summary':'welcome to odoo',
+   'license': 'LGPL-3',
    'data':['security/ir.model.access.csv',
            'views/course_category_views.xml',
             'views/course_views.xml',
